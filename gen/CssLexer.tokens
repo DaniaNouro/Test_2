@@ -1,0 +1,12 @@
+OPEN=1
+ClOSE=2
+TwoPoint=3
+Simicolon=4
+CLASS_SELECTOR=5
+PROPERTY_NAME=6
+PROPERTY_VALUE=7
+WS=8
+'{'=1
+'}'=2
+':'=3
+';'=4
