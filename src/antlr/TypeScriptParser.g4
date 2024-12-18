@@ -4,24 +4,24 @@ parser grammar TypeScriptParser;
 options { tokenVocab = TypeScriptLexer; }
 
 // البرنامج الرئيسي يحتوي على تعريفات الكلاسات
-program: ts_classDeclaration+;
+program: ts_classDeclaration+ EOF?;
 
 // تعريف الكلاس باستخدام الكلمة المفتاحية EXPORT وCLASS مع الجسم الخاص به
 ts_classDeclaration:
-    EXPORT CLASS IDENTIFIER LCURLY ts_classBody RCURLY;
+    EXPORT CLASS IDENTIFIER LCURLY {pushMode(CLASS_BODY_MODE);} ts_classBody RCURLY {popMode();};
 
 // الجسم الخاص بالكلاس، يحتوي على أعضاء الكلاس
 ts_classBody:
-     ts_classBodyMember*;
+    ts_classBodyMember*;
 
 // عضو في الجسم الخاص بالكلاس، يمكن أن يكون enum أو عضو كلاس آخر
 ts_classBodyMember:
-       ts_enumDeclaration
-       | ts_classMember;
+    ts_enumDeclaration
+    | ts_classMember;
 
 // تعريف نوع enum مع أعضائه
 ts_enumDeclaration:
-    ENUM IDENTIFIER LCURLY ts_enumMember (COMMA ts_enumMember)* RCURLY;
+    ENUM IDENTIFIER LCURLY {pushMode(ENUM_MODE);} ts_enumMember (COMMA ts_enumMember)* RCURLY {popMode();};
 
 // تعريف عضو ضمن enum
 ts_enumMember:
@@ -35,15 +35,15 @@ ts_classMember:
 
 // تعريف متغير داخل الكلاس
 ts_variableDeclaration:
-    (LET)? IDENTIFIER (COLON ts_typeWithBrackets)?  EQ  ts_value SEMICOLON;
+    (LET)? IDENTIFIER (COLON ts_typeWithBrackets)? EQ ts_value SEMICOLON;
 
 // تعريف مصفوفة تحتوي على قيم
 ts_array:
-    LBRACK (ts_value (COMMA ts_value)*)? RBRACK;
+    LBRACK {pushMode(ARRAY_MODE);} (ts_value (COMMA ts_value)*)? RBRACK {popMode();};
 
 // تعريف دالة داخل الكلاس
 ts_methodDeclaration:
-    IDENTIFIER (EQ FUNCTION)? LPAREN ts_parameterList? RPAREN (COLON ts_typeWithBrackets)? LCURLY ts_methodBody RCURLY;
+    IDENTIFIER (EQ FUNCTION)? LPAREN ts_parameterList? RPAREN (COLON ts_typeWithBrackets)? LCURLY {pushMode(METHOD_BODY_MODE);} ts_methodBody RCURLY {popMode();};
 
 // جسم الدالة يمكن أن يحتوي على عمليات أو جمل برمجية
 ts_methodBody:
@@ -62,8 +62,8 @@ ts_parameter:
 // تعريف نوع البيانات مع إمكانية استخدام الأقواس
 ts_typeWithBrackets:
     TYPE
-    |TYPE OR NULL
-    |TYPE OR TYPE
+    | TYPE OR NULL
+    | TYPE OR TYPE
     | IDENTIFIER
     | TYPE LBRACK RBRACK
     | ts_tupleType
@@ -72,7 +72,7 @@ ts_typeWithBrackets:
 
 // تعريف نوع بيانات الكائن (object)
 ts_objectType:
-    LCURLY ts_objectTypeProperty (SEMICOLON ts_objectTypeProperty)* SEMICOLON? RCURLY;
+    LCURLY {pushMode(OBJECT_MODE);} ts_objectTypeProperty (SEMICOLON ts_objectTypeProperty)* SEMICOLON? RCURLY {popMode();};
 
 // خاصية داخل نوع بيانات الكائن
 ts_objectTypeProperty:
@@ -94,7 +94,7 @@ ts_value:
     | NULL
     | THIS
     | IDENTIFIER
-    |ts_array
+    | ts_array
     | ts_object
     | LPAREN ts_expression RPAREN
     | ts_tupleValue
@@ -104,7 +104,7 @@ ts_value:
     | ts_enumType
     | ts_templateString
     | ts_value QUESTION_MARK ts_value COLON ts_value
-    |THIS DOT IDENTIFIER
+    | THIS DOT IDENTIFIER
     | ts_value DOT IDENTIFIER LPAREN ts_argumentList? RPAREN;
 
 // تعريف دالة سهمية
@@ -125,7 +125,7 @@ ts_tupleValue:
 
 // تعريف كائن يحتوي على خصائص
 ts_object:
-    LCURLY (ts_objectProperty (COMMA ts_objectProperty)*)? RCURLY;
+    LCURLY {pushMode(OBJECT_MODE);} (ts_objectProperty (COMMA ts_objectProperty)*)? RCURLY {popMode();};
 
 // خاصية داخل كائن
 ts_objectProperty:
@@ -136,7 +136,7 @@ ts_objectProperty:
 ts_statement:
     ts_variableDeclaration
     | ts_methodInvocation
-    |ts_ifStatement
+    | ts_ifStatement
     | ts_assignment
     | ts_returnStatement;
 
@@ -158,12 +158,12 @@ ts_negation:
 
 // تعريف جملة شرطية if
 ts_ifStatement:
-    IF LPAREN   ts_ex RPAREN LCURLY ts_statement* RCURLY
-    (ELSE (ts_ifStatement | LCURLY ts_statement* RCURLY))?;
+    IF LPAREN ts_ex RPAREN LCURLY {pushMode(IF_BODY_MODE);} ts_statement* RCURLY {popMode();}
+    (ELSE (ts_ifStatement | LCURLY {pushMode(ELSE_BODY_MODE);} ts_statement* RCURLY {popMode();}))?;
 
 // تعبير داخل جملة شرطية
 ts_ex:
-    ts_expression| NOT ts_expression;
+    ts_expression | NOT ts_expression;
 
 // تعريف تعبير يمكن أن يكون عملية مقارنة أو شرط
 ts_expression:
@@ -177,7 +177,7 @@ ts_expression:
 
 // جزء من تعبير يحتوي على عمليات أو مقارنات
 ts_p1:
-    ts_value(EQ|COMPARISON_OPERATOR ts_value)? ;
+    ts_value (EQ | COMPARISON_OPERATOR ts_value)?;
 
 // تعريف عملية إسناد قيم
 ts_assignment:
@@ -186,4 +186,3 @@ ts_assignment:
 // تعريف قيمة داخل أقواس
 ts_parenthesizedValue:
     LPAREN ts_value RPAREN;
-

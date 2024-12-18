@@ -5,14 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7ae44293-0eaf-49bd-aa6e-08c5db3c851c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Test_2.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Test_2.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/antlr/CssLexer.g4" beforeDir="false" afterPath="$PROJECT_DIR$/src/antlr/CssLexer.g4" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/antlr/CssParser.g4" beforeDir="false" afterPath="$PROJECT_DIR$/src/antlr/CssParser.g4" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gen/TypeScriptLexer.interp" beforeDir="false" afterPath="$PROJECT_DIR$/gen/TypeScriptLexer.interp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gen/TypeScriptLexer.java" beforeDir="false" afterPath="$PROJECT_DIR$/gen/TypeScriptLexer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/antlr/TypeScriptLexer.g4" beforeDir="false" afterPath="$PROJECT_DIR$/src/antlr/TypeScriptLexer.g4" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/antlr/TypeScriptParser.g4" beforeDir="false" afterPath="$PROJECT_DIR$/src/antlr/TypeScriptParser.g4" afterDir="false" />
     </list>
@@ -35,21 +30,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.Main.executor": "Run",
-    "Application.Test_2.executor": "Coverage",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "TypeScript",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "E:/My_project_compiler/Test_2",
-    "onboarding.tips.debug.path": "E:/My_project_compiler/Test_2/src/Main.java",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "configurable.group.tools"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Test_2.executor&quot;: &quot;Coverage&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;TypeScript&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;E:/Com/Test_2/Test_2&quot;,
+    &quot;onboarding.tips.debug.path&quot;: &quot;E:/My_project_compiler/Test_2/src/Main.java&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;configurable.group.tools&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="E:\My_project_compiler\Test_2\src" />
