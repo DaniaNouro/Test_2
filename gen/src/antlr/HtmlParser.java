@@ -1,0 +1,1194 @@
+// Generated from E:/My_project_compiler/Test_2/src/antlr/HtmlParser.g4 by ANTLR 4.13.2
+package src.antlr;
+import org.antlr.v4.runtime.atn.*;
+import org.antlr.v4.runtime.dfa.DFA;
+import org.antlr.v4.runtime.*;
+import org.antlr.v4.runtime.misc.*;
+import org.antlr.v4.runtime.tree.*;
+import java.util.List;
+import java.util.Iterator;
+import java.util.ArrayList;
+
+@SuppressWarnings({"all", "warnings", "unchecked", "unused", "cast", "CheckReturnValue", "this-escape"})
+public class HtmlParser extends Parser {
+	static { RuntimeMetaData.checkVersion("4.13.2", RuntimeMetaData.VERSION); }
+
+	protected static final DFA[] _decisionToDFA;
+	protected static final PredictionContextCache _sharedContextCache =
+		new PredictionContextCache();
+	public static final int
+		HTML_COMMENT=1, HTML_CONDITIONAL_COMMENT=2, XML=3, CDATA=4, DTD=5, SCRIPTLET=6, 
+		SEA_WS=7, SCRIPT_OPEN=8, STYLE_OPEN=9, TAG_OPEN=10, HTML_TEXT=11, NG_ATTRBIUTE=12, 
+		SINGLE_QOUTE=13, ID=14, IN=15, TAG_CLOSE=16, TAG_SLASH_CLOSE=17, TAG_SLASH=18, 
+		TAG_EQUALS=19, TAG_NAME=20, TAG_WHITESPACE=21, SCRIPT_BODY=22, SCRIPT_SHORT_BODY=23, 
+		STYLE_BODY=24, STYLE_SHORT_BODY=25, ATTVALUE_VALUE=26, ATTRIBUTE=27, NGFOR=28;
+	public static final int
+		RULE_htmlDocument = 0, RULE_scriptletOrSeaWs = 1, RULE_htmlElements = 2, 
+		RULE_htmlElement = 3, RULE_htmlContent = 4, RULE_htmlAttribute = 5, RULE_ngfor_body = 6, 
+		RULE_htmlChardata = 7, RULE_htmlMisc = 8, RULE_htmlComment = 9, RULE_script = 10, 
+		RULE_style = 11;
+	private static String[] makeRuleNames() {
+		return new String[] {
+			"htmlDocument", "scriptletOrSeaWs", "htmlElements", "htmlElement", "htmlContent", 
+			"htmlAttribute", "ngfor_body", "htmlChardata", "htmlMisc", "htmlComment", 
+			"script", "style"
+		};
+	}
+	public static final String[] ruleNames = makeRuleNames();
+
+	private static String[] makeLiteralNames() {
+		return new String[] {
+			null, null, null, null, null, null, null, null, null, null, "'<'", null, 
+			"'!'", "'''", "'x'", "'in'", "'>'", "'/>'", "'/'", "'='"
+		};
+	}
+	private static final String[] _LITERAL_NAMES = makeLiteralNames();
+	private static String[] makeSymbolicNames() {
+		return new String[] {
+			null, "HTML_COMMENT", "HTML_CONDITIONAL_COMMENT", "XML", "CDATA", "DTD", 
+			"SCRIPTLET", "SEA_WS", "SCRIPT_OPEN", "STYLE_OPEN", "TAG_OPEN", "HTML_TEXT", 
+			"NG_ATTRBIUTE", "SINGLE_QOUTE", "ID", "IN", "TAG_CLOSE", "TAG_SLASH_CLOSE", 
+			"TAG_SLASH", "TAG_EQUALS", "TAG_NAME", "TAG_WHITESPACE", "SCRIPT_BODY", 
+			"SCRIPT_SHORT_BODY", "STYLE_BODY", "STYLE_SHORT_BODY", "ATTVALUE_VALUE", 
+			"ATTRIBUTE", "NGFOR"
+		};
+	}
+	private static final String[] _SYMBOLIC_NAMES = makeSymbolicNames();
+	public static final Vocabulary VOCABULARY = new VocabularyImpl(_LITERAL_NAMES, _SYMBOLIC_NAMES);
+
+	/**
+	 * @deprecated Use {@link #VOCABULARY} instead.
+	 */
+	@Deprecated
+	public static final String[] tokenNames;
+	static {
+		tokenNames = new String[_SYMBOLIC_NAMES.length];
+		for (int i = 0; i < tokenNames.length; i++) {
+			tokenNames[i] = VOCABULARY.getLiteralName(i);
+			if (tokenNames[i] == null) {
+				tokenNames[i] = VOCABULARY.getSymbolicName(i);
+			}
+
+			if (tokenNames[i] == null) {
+				tokenNames[i] = "<INVALID>";
+			}
+		}
+	}
+
+	@Override
+	@Deprecated
+	public String[] getTokenNames() {
+		return tokenNames;
+	}
+
+	@Override
+
+	public Vocabulary getVocabulary() {
+		return VOCABULARY;
+	}
+
+	@Override
+	public String getGrammarFileName() { return "HtmlParser.g4"; }
+
+	@Override
+	public String[] getRuleNames() { return ruleNames; }
+
+	@Override
+	public String getSerializedATN() { return _serializedATN; }
+
+	@Override
+	public ATN getATN() { return _ATN; }
+
+	public HtmlParser(TokenStream input) {
+		super(input);
+		_interp = new ParserATNSimulator(this,_ATN,_decisionToDFA,_sharedContextCache);
+	}
+
+	@SuppressWarnings("CheckReturnValue")
+	public static class HtmlDocumentContext extends ParserRuleContext {
+		public List<ScriptletOrSeaWsContext> scriptletOrSeaWs() {
+			return getRuleContexts(ScriptletOrSeaWsContext.class);
+		}
+		public ScriptletOrSeaWsContext scriptletOrSeaWs(int i) {
+			return getRuleContext(ScriptletOrSeaWsContext.class,i);
+		}
+		public TerminalNode XML() { return getToken(HtmlParser.XML, 0); }
+		public TerminalNode DTD() { return getToken(HtmlParser.DTD, 0); }
+		public List<HtmlElementsContext> htmlElements() {
+			return getRuleContexts(HtmlElementsContext.class);
+		}
+		public HtmlElementsContext htmlElements(int i) {
+			return getRuleContext(HtmlElementsContext.class,i);
+		}
+		public HtmlDocumentContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_htmlDocument; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof HtmlParserListener ) ((HtmlParserListener)listener).enterHtmlDocument(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof HtmlParserListener ) ((HtmlParserListener)listener).exitHtmlDocument(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof HtmlParserVisitor ) return ((HtmlParserVisitor<? extends T>)visitor).visitHtmlDocument(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+
+	public final HtmlDocumentContext htmlDocument() throws RecognitionException {
+		HtmlDocumentContext _localctx = new HtmlDocumentContext(_ctx, getState());
+		enterRule(_localctx, 0, RULE_htmlDocument);
+		int _la;
+		try {
+			int _alt;
+			enterOuterAlt(_localctx, 1);
+			{
+			setState(27);
+			_errHandler.sync(this);
+			_alt = getInterpreter().adaptivePredict(_input,0,_ctx);
+			while ( _alt!=2 && _alt!=org.antlr.v4.runtime.atn.ATN.INVALID_ALT_NUMBER ) {
+				if ( _alt==1 ) {
+					{
+					{
+					setState(24);
+					scriptletOrSeaWs();
+					}
+					} 
+				}
+				setState(29);
+				_errHandler.sync(this);
+				_alt = getInterpreter().adaptivePredict(_input,0,_ctx);
+			}
+			setState(31);
+			_errHandler.sync(this);
+			_la = _input.LA(1);
+			if (_la==XML) {
+				{
+				setState(30);
+				match(XML);
+				}
+			}
+
+			setState(36);
+			_errHandler.sync(this);
+			_alt = getInterpreter().adaptivePredict(_input,2,_ctx);
+			while ( _alt!=2 && _alt!=org.antlr.v4.runtime.atn.ATN.INVALID_ALT_NUMBER ) {
+				if ( _alt==1 ) {
+					{
+					{
+					setState(33);
+					scriptletOrSeaWs();
+					}
+					} 
+				}
+				setState(38);
+				_errHandler.sync(this);
+				_alt = getInterpreter().adaptivePredict(_input,2,_ctx);
+			}
+			setState(40);
+			_errHandler.sync(this);
+			_la = _input.LA(1);
+			if (_la==DTD) {
+				{
+				setState(39);
+				match(DTD);
+				}
+			}
+
+			setState(45);
+			_errHandler.sync(this);
+			_alt = getInterpreter().adaptivePredict(_input,4,_ctx);
+			while ( _alt!=2 && _alt!=org.antlr.v4.runtime.atn.ATN.INVALID_ALT_NUMBER ) {
+				if ( _alt==1 ) {
+					{
+					{
+					setState(42);
+					scriptletOrSeaWs();
+					}
+					} 
+				}
+				setState(47);
+				_errHandler.sync(this);
+				_alt = getInterpreter().adaptivePredict(_input,4,_ctx);
+			}
+			setState(51);
+			_errHandler.sync(this);
+			_la = _input.LA(1);
+			while ((((_la) & ~0x3f) == 0 && ((1L << _la) & 1990L) != 0)) {
+				{
+				{
+				setState(48);
+				htmlElements();
+				}
+				}
+				setState(53);
+				_errHandler.sync(this);
+				_la = _input.LA(1);
+			}
+			}
+		}
+		catch (RecognitionException re) {
+			_localctx.exception = re;
+			_errHandler.reportError(this, re);
+			_errHandler.recover(this, re);
+		}
+		finally {
+			exitRule();
+		}
+		return _localctx;
+	}
+
+	@SuppressWarnings("CheckReturnValue")
+	public static class ScriptletOrSeaWsContext extends ParserRuleContext {
+		public TerminalNode SCRIPTLET() { return getToken(HtmlParser.SCRIPTLET, 0); }
+		public TerminalNode SEA_WS() { return getToken(HtmlParser.SEA_WS, 0); }
+		public ScriptletOrSeaWsContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_scriptletOrSeaWs; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof HtmlParserListener ) ((HtmlParserListener)listener).enterScriptletOrSeaWs(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof HtmlParserListener ) ((HtmlParserListener)listener).exitScriptletOrSeaWs(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof HtmlParserVisitor ) return ((HtmlParserVisitor<? extends T>)visitor).visitScriptletOrSeaWs(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+
+	public final ScriptletOrSeaWsContext scriptletOrSeaWs() throws RecognitionException {
+		ScriptletOrSeaWsContext _localctx = new ScriptletOrSeaWsContext(_ctx, getState());
+		enterRule(_localctx, 2, RULE_scriptletOrSeaWs);
+		int _la;
+		try {
+			enterOuterAlt(_localctx, 1);
+			{
+			setState(54);
+			_la = _input.LA(1);
+			if ( !(_la==SCRIPTLET || _la==SEA_WS) ) {
+			_errHandler.recoverInline(this);
+			}
+			else {
+				if ( _input.LA(1)==Token.EOF ) matchedEOF = true;
+				_errHandler.reportMatch(this);
+				consume();
+			}
+			}
+		}
+		catch (RecognitionException re) {
+			_localctx.exception = re;
+			_errHandler.reportError(this, re);
+			_errHandler.recover(this, re);
+		}
+		finally {
+			exitRule();
+		}
+		return _localctx;
+	}
+
+	@SuppressWarnings("CheckReturnValue")
+	public static class HtmlElementsContext extends ParserRuleContext {
+		public HtmlElementContext htmlElement() {
+			return getRuleContext(HtmlElementContext.class,0);
+		}
+		public List<HtmlMiscContext> htmlMisc() {
+			return getRuleContexts(HtmlMiscContext.class);
+		}
+		public HtmlMiscContext htmlMisc(int i) {
+			return getRuleContext(HtmlMiscContext.class,i);
+		}
+		public HtmlElementsContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_htmlElements; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof HtmlParserListener ) ((HtmlParserListener)listener).enterHtmlElements(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof HtmlParserListener ) ((HtmlParserListener)listener).exitHtmlElements(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof HtmlParserVisitor ) return ((HtmlParserVisitor<? extends T>)visitor).visitHtmlElements(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+
+	public final HtmlElementsContext htmlElements() throws RecognitionException {
+		HtmlElementsContext _localctx = new HtmlElementsContext(_ctx, getState());
+		enterRule(_localctx, 4, RULE_htmlElements);
+		int _la;
+		try {
+			int _alt;
+			enterOuterAlt(_localctx, 1);
+			{
+			setState(59);
+			_errHandler.sync(this);
+			_la = _input.LA(1);
+			while ((((_la) & ~0x3f) == 0 && ((1L << _la) & 134L) != 0)) {
+				{
+				{
+				setState(56);
+				htmlMisc();
+				}
+				}
+				setState(61);
+				_errHandler.sync(this);
+				_la = _input.LA(1);
+			}
+			setState(62);
+			htmlElement();
+			setState(66);
+			_errHandler.sync(this);
+			_alt = getInterpreter().adaptivePredict(_input,7,_ctx);
+			while ( _alt!=2 && _alt!=org.antlr.v4.runtime.atn.ATN.INVALID_ALT_NUMBER ) {
+				if ( _alt==1 ) {
+					{
+					{
+					setState(63);
+					htmlMisc();
+					}
+					} 
+				}
+				setState(68);
+				_errHandler.sync(this);
+				_alt = getInterpreter().adaptivePredict(_input,7,_ctx);
+			}
+			}
+		}
+		catch (RecognitionException re) {
+			_localctx.exception = re;
+			_errHandler.reportError(this, re);
+			_errHandler.recover(this, re);
+		}
+		finally {
+			exitRule();
+		}
+		return _localctx;
+	}
+
+	@SuppressWarnings("CheckReturnValue")
+	public static class HtmlElementContext extends ParserRuleContext {
+		public List<TerminalNode> TAG_OPEN() { return getTokens(HtmlParser.TAG_OPEN); }
+		public TerminalNode TAG_OPEN(int i) {
+			return getToken(HtmlParser.TAG_OPEN, i);
+		}
+		public List<TerminalNode> TAG_NAME() { return getTokens(HtmlParser.TAG_NAME); }
+		public TerminalNode TAG_NAME(int i) {
+			return getToken(HtmlParser.TAG_NAME, i);
+		}
+		public List<TerminalNode> TAG_CLOSE() { return getTokens(HtmlParser.TAG_CLOSE); }
+		public TerminalNode TAG_CLOSE(int i) {
+			return getToken(HtmlParser.TAG_CLOSE, i);
+		}
+		public TerminalNode TAG_SLASH_CLOSE() { return getToken(HtmlParser.TAG_SLASH_CLOSE, 0); }
+		public List<HtmlAttributeContext> htmlAttribute() {
+			return getRuleContexts(HtmlAttributeContext.class);
+		}
+		public HtmlAttributeContext htmlAttribute(int i) {
+			return getRuleContext(HtmlAttributeContext.class,i);
+		}
+		public HtmlContentContext htmlContent() {
+			return getRuleContext(HtmlContentContext.class,0);
+		}
+		public TerminalNode TAG_SLASH() { return getToken(HtmlParser.TAG_SLASH, 0); }
+		public TerminalNode SCRIPTLET() { return getToken(HtmlParser.SCRIPTLET, 0); }
+		public ScriptContext script() {
+			return getRuleContext(ScriptContext.class,0);
+		}
+		public StyleContext style() {
+			return getRuleContext(StyleContext.class,0);
+		}
+		public HtmlElementContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_htmlElement; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof HtmlParserListener ) ((HtmlParserListener)listener).enterHtmlElement(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof HtmlParserListener ) ((HtmlParserListener)listener).exitHtmlElement(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof HtmlParserVisitor ) return ((HtmlParserVisitor<? extends T>)visitor).visitHtmlElement(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+
+	public final HtmlElementContext htmlElement() throws RecognitionException {
+		HtmlElementContext _localctx = new HtmlElementContext(_ctx, getState());
+		enterRule(_localctx, 6, RULE_htmlElement);
+		int _la;
+		try {
+			setState(92);
+			_errHandler.sync(this);
+			switch (_input.LA(1)) {
+			case TAG_OPEN:
+				enterOuterAlt(_localctx, 1);
+				{
+				setState(69);
+				match(TAG_OPEN);
+				setState(70);
+				match(TAG_NAME);
+				setState(74);
+				_errHandler.sync(this);
+				_la = _input.LA(1);
+				while (_la==TAG_NAME || _la==NGFOR) {
+					{
+					{
+					setState(71);
+					htmlAttribute();
+					}
+					}
+					setState(76);
+					_errHandler.sync(this);
+					_la = _input.LA(1);
+				}
+				setState(87);
+				_errHandler.sync(this);
+				switch (_input.LA(1)) {
+				case TAG_CLOSE:
+					{
+					setState(77);
+					match(TAG_CLOSE);
+					setState(84);
+					_errHandler.sync(this);
+					switch ( getInterpreter().adaptivePredict(_input,9,_ctx) ) {
+					case 1:
+						{
+						setState(78);
+						htmlContent();
+						setState(79);
+						match(TAG_OPEN);
+						setState(80);
+						match(TAG_SLASH);
+						setState(81);
+						match(TAG_NAME);
+						setState(82);
+						match(TAG_CLOSE);
+						}
+						break;
+					}
+					}
+					break;
+				case TAG_SLASH_CLOSE:
+					{
+					setState(86);
+					match(TAG_SLASH_CLOSE);
+					}
+					break;
+				default:
+					throw new NoViableAltException(this);
+				}
+				}
+				break;
+			case SCRIPTLET:
+				enterOuterAlt(_localctx, 2);
+				{
+				setState(89);
+				match(SCRIPTLET);
+				}
+				break;
+			case SCRIPT_OPEN:
+				enterOuterAlt(_localctx, 3);
+				{
+				setState(90);
+				script();
+				}
+				break;
+			case STYLE_OPEN:
+				enterOuterAlt(_localctx, 4);
+				{
+				setState(91);
+				style();
+				}
+				break;
+			default:
+				throw new NoViableAltException(this);
+			}
+		}
+		catch (RecognitionException re) {
+			_localctx.exception = re;
+			_errHandler.reportError(this, re);
+			_errHandler.recover(this, re);
+		}
+		finally {
+			exitRule();
+		}
+		return _localctx;
+	}
+
+	@SuppressWarnings("CheckReturnValue")
+	public static class HtmlContentContext extends ParserRuleContext {
+		public List<HtmlChardataContext> htmlChardata() {
+			return getRuleContexts(HtmlChardataContext.class);
+		}
+		public HtmlChardataContext htmlChardata(int i) {
+			return getRuleContext(HtmlChardataContext.class,i);
+		}
+		public List<HtmlElementContext> htmlElement() {
+			return getRuleContexts(HtmlElementContext.class);
+		}
+		public HtmlElementContext htmlElement(int i) {
+			return getRuleContext(HtmlElementContext.class,i);
+		}
+		public List<TerminalNode> CDATA() { return getTokens(HtmlParser.CDATA); }
+		public TerminalNode CDATA(int i) {
+			return getToken(HtmlParser.CDATA, i);
+		}
+		public List<HtmlCommentContext> htmlComment() {
+			return getRuleContexts(HtmlCommentContext.class);
+		}
+		public HtmlCommentContext htmlComment(int i) {
+			return getRuleContext(HtmlCommentContext.class,i);
+		}
+		public HtmlContentContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_htmlContent; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof HtmlParserListener ) ((HtmlParserListener)listener).enterHtmlContent(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof HtmlParserListener ) ((HtmlParserListener)listener).exitHtmlContent(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof HtmlParserVisitor ) return ((HtmlParserVisitor<? extends T>)visitor).visitHtmlContent(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+
+	public final HtmlContentContext htmlContent() throws RecognitionException {
+		HtmlContentContext _localctx = new HtmlContentContext(_ctx, getState());
+		enterRule(_localctx, 8, RULE_htmlContent);
+		try {
+			int _alt;
+			enterOuterAlt(_localctx, 1);
+			{
+			setState(95);
+			_errHandler.sync(this);
+			switch ( getInterpreter().adaptivePredict(_input,12,_ctx) ) {
+			case 1:
+				{
+				setState(94);
+				htmlChardata();
+				}
+				break;
+			}
+			setState(107);
+			_errHandler.sync(this);
+			_alt = getInterpreter().adaptivePredict(_input,15,_ctx);
+			while ( _alt!=2 && _alt!=org.antlr.v4.runtime.atn.ATN.INVALID_ALT_NUMBER ) {
+				if ( _alt==1 ) {
+					{
+					{
+					setState(100);
+					_errHandler.sync(this);
+					switch (_input.LA(1)) {
+					case SCRIPTLET:
+					case SCRIPT_OPEN:
+					case STYLE_OPEN:
+					case TAG_OPEN:
+						{
+						setState(97);
+						htmlElement();
+						}
+						break;
+					case CDATA:
+						{
+						setState(98);
+						match(CDATA);
+						}
+						break;
+					case HTML_COMMENT:
+					case HTML_CONDITIONAL_COMMENT:
+						{
+						setState(99);
+						htmlComment();
+						}
+						break;
+					default:
+						throw new NoViableAltException(this);
+					}
+					setState(103);
+					_errHandler.sync(this);
+					switch ( getInterpreter().adaptivePredict(_input,14,_ctx) ) {
+					case 1:
+						{
+						setState(102);
+						htmlChardata();
+						}
+						break;
+					}
+					}
+					} 
+				}
+				setState(109);
+				_errHandler.sync(this);
+				_alt = getInterpreter().adaptivePredict(_input,15,_ctx);
+			}
+			}
+		}
+		catch (RecognitionException re) {
+			_localctx.exception = re;
+			_errHandler.reportError(this, re);
+			_errHandler.recover(this, re);
+		}
+		finally {
+			exitRule();
+		}
+		return _localctx;
+	}
+
+	@SuppressWarnings("CheckReturnValue")
+	public static class HtmlAttributeContext extends ParserRuleContext {
+		public TerminalNode NGFOR() { return getToken(HtmlParser.NGFOR, 0); }
+		public TerminalNode NG_ATTRBIUTE() { return getToken(HtmlParser.NG_ATTRBIUTE, 0); }
+		public List<TerminalNode> SINGLE_QOUTE() { return getTokens(HtmlParser.SINGLE_QOUTE); }
+		public TerminalNode SINGLE_QOUTE(int i) {
+			return getToken(HtmlParser.SINGLE_QOUTE, i);
+		}
+		public Ngfor_bodyContext ngfor_body() {
+			return getRuleContext(Ngfor_bodyContext.class,0);
+		}
+		public TerminalNode TAG_NAME() { return getToken(HtmlParser.TAG_NAME, 0); }
+		public TerminalNode TAG_EQUALS() { return getToken(HtmlParser.TAG_EQUALS, 0); }
+		public TerminalNode ATTVALUE_VALUE() { return getToken(HtmlParser.ATTVALUE_VALUE, 0); }
+		public HtmlAttributeContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_htmlAttribute; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof HtmlParserListener ) ((HtmlParserListener)listener).enterHtmlAttribute(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof HtmlParserListener ) ((HtmlParserListener)listener).exitHtmlAttribute(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof HtmlParserVisitor ) return ((HtmlParserVisitor<? extends T>)visitor).visitHtmlAttribute(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+
+	public final HtmlAttributeContext htmlAttribute() throws RecognitionException {
+		HtmlAttributeContext _localctx = new HtmlAttributeContext(_ctx, getState());
+		enterRule(_localctx, 10, RULE_htmlAttribute);
+		int _la;
+		try {
+			setState(121);
+			_errHandler.sync(this);
+			switch (_input.LA(1)) {
+			case NGFOR:
+				enterOuterAlt(_localctx, 1);
+				{
+				setState(110);
+				match(NGFOR);
+				setState(111);
+				match(NG_ATTRBIUTE);
+				setState(112);
+				match(SINGLE_QOUTE);
+				setState(113);
+				ngfor_body();
+				setState(114);
+				match(SINGLE_QOUTE);
+				}
+				break;
+			case TAG_NAME:
+				enterOuterAlt(_localctx, 2);
+				{
+				setState(116);
+				match(TAG_NAME);
+				setState(119);
+				_errHandler.sync(this);
+				_la = _input.LA(1);
+				if (_la==TAG_EQUALS) {
+					{
+					setState(117);
+					match(TAG_EQUALS);
+					setState(118);
+					match(ATTVALUE_VALUE);
+					}
+				}
+
+				}
+				break;
+			default:
+				throw new NoViableAltException(this);
+			}
+		}
+		catch (RecognitionException re) {
+			_localctx.exception = re;
+			_errHandler.reportError(this, re);
+			_errHandler.recover(this, re);
+		}
+		finally {
+			exitRule();
+		}
+		return _localctx;
+	}
+
+	@SuppressWarnings("CheckReturnValue")
+	public static class Ngfor_bodyContext extends ParserRuleContext {
+		public List<TerminalNode> ID() { return getTokens(HtmlParser.ID); }
+		public TerminalNode ID(int i) {
+			return getToken(HtmlParser.ID, i);
+		}
+		public TerminalNode IN() { return getToken(HtmlParser.IN, 0); }
+		public Ngfor_bodyContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_ngfor_body; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof HtmlParserListener ) ((HtmlParserListener)listener).enterNgfor_body(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof HtmlParserListener ) ((HtmlParserListener)listener).exitNgfor_body(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof HtmlParserVisitor ) return ((HtmlParserVisitor<? extends T>)visitor).visitNgfor_body(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+
+	public final Ngfor_bodyContext ngfor_body() throws RecognitionException {
+		Ngfor_bodyContext _localctx = new Ngfor_bodyContext(_ctx, getState());
+		enterRule(_localctx, 12, RULE_ngfor_body);
+		try {
+			enterOuterAlt(_localctx, 1);
+			{
+			setState(123);
+			match(ID);
+			setState(124);
+			match(IN);
+			setState(125);
+			match(ID);
+			}
+		}
+		catch (RecognitionException re) {
+			_localctx.exception = re;
+			_errHandler.reportError(this, re);
+			_errHandler.recover(this, re);
+		}
+		finally {
+			exitRule();
+		}
+		return _localctx;
+	}
+
+	@SuppressWarnings("CheckReturnValue")
+	public static class HtmlChardataContext extends ParserRuleContext {
+		public TerminalNode HTML_TEXT() { return getToken(HtmlParser.HTML_TEXT, 0); }
+		public TerminalNode SEA_WS() { return getToken(HtmlParser.SEA_WS, 0); }
+		public HtmlChardataContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_htmlChardata; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof HtmlParserListener ) ((HtmlParserListener)listener).enterHtmlChardata(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof HtmlParserListener ) ((HtmlParserListener)listener).exitHtmlChardata(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof HtmlParserVisitor ) return ((HtmlParserVisitor<? extends T>)visitor).visitHtmlChardata(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+
+	public final HtmlChardataContext htmlChardata() throws RecognitionException {
+		HtmlChardataContext _localctx = new HtmlChardataContext(_ctx, getState());
+		enterRule(_localctx, 14, RULE_htmlChardata);
+		try {
+			setState(130);
+			_errHandler.sync(this);
+			switch (_input.LA(1)) {
+			case HTML_TEXT:
+				enterOuterAlt(_localctx, 1);
+				{
+				setState(127);
+				match(HTML_TEXT);
+				}
+				break;
+			case SEA_WS:
+				enterOuterAlt(_localctx, 2);
+				{
+				setState(128);
+				match(SEA_WS);
+				}
+				break;
+			case HTML_COMMENT:
+			case HTML_CONDITIONAL_COMMENT:
+			case CDATA:
+			case SCRIPTLET:
+			case SCRIPT_OPEN:
+			case STYLE_OPEN:
+			case TAG_OPEN:
+				enterOuterAlt(_localctx, 3);
+				{
+				}
+				break;
+			default:
+				throw new NoViableAltException(this);
+			}
+		}
+		catch (RecognitionException re) {
+			_localctx.exception = re;
+			_errHandler.reportError(this, re);
+			_errHandler.recover(this, re);
+		}
+		finally {
+			exitRule();
+		}
+		return _localctx;
+	}
+
+	@SuppressWarnings("CheckReturnValue")
+	public static class HtmlMiscContext extends ParserRuleContext {
+		public HtmlCommentContext htmlComment() {
+			return getRuleContext(HtmlCommentContext.class,0);
+		}
+		public TerminalNode SEA_WS() { return getToken(HtmlParser.SEA_WS, 0); }
+		public HtmlMiscContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_htmlMisc; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof HtmlParserListener ) ((HtmlParserListener)listener).enterHtmlMisc(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof HtmlParserListener ) ((HtmlParserListener)listener).exitHtmlMisc(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof HtmlParserVisitor ) return ((HtmlParserVisitor<? extends T>)visitor).visitHtmlMisc(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+
+	public final HtmlMiscContext htmlMisc() throws RecognitionException {
+		HtmlMiscContext _localctx = new HtmlMiscContext(_ctx, getState());
+		enterRule(_localctx, 16, RULE_htmlMisc);
+		try {
+			setState(134);
+			_errHandler.sync(this);
+			switch (_input.LA(1)) {
+			case HTML_COMMENT:
+			case HTML_CONDITIONAL_COMMENT:
+				enterOuterAlt(_localctx, 1);
+				{
+				setState(132);
+				htmlComment();
+				}
+				break;
+			case SEA_WS:
+				enterOuterAlt(_localctx, 2);
+				{
+				setState(133);
+				match(SEA_WS);
+				}
+				break;
+			default:
+				throw new NoViableAltException(this);
+			}
+		}
+		catch (RecognitionException re) {
+			_localctx.exception = re;
+			_errHandler.reportError(this, re);
+			_errHandler.recover(this, re);
+		}
+		finally {
+			exitRule();
+		}
+		return _localctx;
+	}
+
+	@SuppressWarnings("CheckReturnValue")
+	public static class HtmlCommentContext extends ParserRuleContext {
+		public TerminalNode HTML_COMMENT() { return getToken(HtmlParser.HTML_COMMENT, 0); }
+		public TerminalNode HTML_CONDITIONAL_COMMENT() { return getToken(HtmlParser.HTML_CONDITIONAL_COMMENT, 0); }
+		public HtmlCommentContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_htmlComment; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof HtmlParserListener ) ((HtmlParserListener)listener).enterHtmlComment(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof HtmlParserListener ) ((HtmlParserListener)listener).exitHtmlComment(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof HtmlParserVisitor ) return ((HtmlParserVisitor<? extends T>)visitor).visitHtmlComment(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+
+	public final HtmlCommentContext htmlComment() throws RecognitionException {
+		HtmlCommentContext _localctx = new HtmlCommentContext(_ctx, getState());
+		enterRule(_localctx, 18, RULE_htmlComment);
+		int _la;
+		try {
+			enterOuterAlt(_localctx, 1);
+			{
+			setState(136);
+			_la = _input.LA(1);
+			if ( !(_la==HTML_COMMENT || _la==HTML_CONDITIONAL_COMMENT) ) {
+			_errHandler.recoverInline(this);
+			}
+			else {
+				if ( _input.LA(1)==Token.EOF ) matchedEOF = true;
+				_errHandler.reportMatch(this);
+				consume();
+			}
+			}
+		}
+		catch (RecognitionException re) {
+			_localctx.exception = re;
+			_errHandler.reportError(this, re);
+			_errHandler.recover(this, re);
+		}
+		finally {
+			exitRule();
+		}
+		return _localctx;
+	}
+
+	@SuppressWarnings("CheckReturnValue")
+	public static class ScriptContext extends ParserRuleContext {
+		public TerminalNode SCRIPT_OPEN() { return getToken(HtmlParser.SCRIPT_OPEN, 0); }
+		public TerminalNode SCRIPT_BODY() { return getToken(HtmlParser.SCRIPT_BODY, 0); }
+		public TerminalNode SCRIPT_SHORT_BODY() { return getToken(HtmlParser.SCRIPT_SHORT_BODY, 0); }
+		public ScriptContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_script; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof HtmlParserListener ) ((HtmlParserListener)listener).enterScript(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof HtmlParserListener ) ((HtmlParserListener)listener).exitScript(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof HtmlParserVisitor ) return ((HtmlParserVisitor<? extends T>)visitor).visitScript(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+
+	public final ScriptContext script() throws RecognitionException {
+		ScriptContext _localctx = new ScriptContext(_ctx, getState());
+		enterRule(_localctx, 20, RULE_script);
+		int _la;
+		try {
+			enterOuterAlt(_localctx, 1);
+			{
+			setState(138);
+			match(SCRIPT_OPEN);
+			setState(139);
+			_la = _input.LA(1);
+			if ( !(_la==SCRIPT_BODY || _la==SCRIPT_SHORT_BODY) ) {
+			_errHandler.recoverInline(this);
+			}
+			else {
+				if ( _input.LA(1)==Token.EOF ) matchedEOF = true;
+				_errHandler.reportMatch(this);
+				consume();
+			}
+			}
+		}
+		catch (RecognitionException re) {
+			_localctx.exception = re;
+			_errHandler.reportError(this, re);
+			_errHandler.recover(this, re);
+		}
+		finally {
+			exitRule();
+		}
+		return _localctx;
+	}
+
+	@SuppressWarnings("CheckReturnValue")
+	public static class StyleContext extends ParserRuleContext {
+		public TerminalNode STYLE_OPEN() { return getToken(HtmlParser.STYLE_OPEN, 0); }
+		public TerminalNode STYLE_BODY() { return getToken(HtmlParser.STYLE_BODY, 0); }
+		public TerminalNode STYLE_SHORT_BODY() { return getToken(HtmlParser.STYLE_SHORT_BODY, 0); }
+		public StyleContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_style; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof HtmlParserListener ) ((HtmlParserListener)listener).enterStyle(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof HtmlParserListener ) ((HtmlParserListener)listener).exitStyle(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof HtmlParserVisitor ) return ((HtmlParserVisitor<? extends T>)visitor).visitStyle(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+
+	public final StyleContext style() throws RecognitionException {
+		StyleContext _localctx = new StyleContext(_ctx, getState());
+		enterRule(_localctx, 22, RULE_style);
+		int _la;
+		try {
+			enterOuterAlt(_localctx, 1);
+			{
+			setState(141);
+			match(STYLE_OPEN);
+			setState(142);
+			_la = _input.LA(1);
+			if ( !(_la==STYLE_BODY || _la==STYLE_SHORT_BODY) ) {
+			_errHandler.recoverInline(this);
+			}
+			else {
+				if ( _input.LA(1)==Token.EOF ) matchedEOF = true;
+				_errHandler.reportMatch(this);
+				consume();
+			}
+			}
+		}
+		catch (RecognitionException re) {
+			_localctx.exception = re;
+			_errHandler.reportError(this, re);
+			_errHandler.recover(this, re);
+		}
+		finally {
+			exitRule();
+		}
+		return _localctx;
+	}
+
+	public static final String _serializedATN =
+		"\u0004\u0001\u001c\u0091\u0002\u0000\u0007\u0000\u0002\u0001\u0007\u0001"+
+		"\u0002\u0002\u0007\u0002\u0002\u0003\u0007\u0003\u0002\u0004\u0007\u0004"+
+		"\u0002\u0005\u0007\u0005\u0002\u0006\u0007\u0006\u0002\u0007\u0007\u0007"+
+		"\u0002\b\u0007\b\u0002\t\u0007\t\u0002\n\u0007\n\u0002\u000b\u0007\u000b"+
+		"\u0001\u0000\u0005\u0000\u001a\b\u0000\n\u0000\f\u0000\u001d\t\u0000\u0001"+
+		"\u0000\u0003\u0000 \b\u0000\u0001\u0000\u0005\u0000#\b\u0000\n\u0000\f"+
+		"\u0000&\t\u0000\u0001\u0000\u0003\u0000)\b\u0000\u0001\u0000\u0005\u0000"+
+		",\b\u0000\n\u0000\f\u0000/\t\u0000\u0001\u0000\u0005\u00002\b\u0000\n"+
+		"\u0000\f\u00005\t\u0000\u0001\u0001\u0001\u0001\u0001\u0002\u0005\u0002"+
+		":\b\u0002\n\u0002\f\u0002=\t\u0002\u0001\u0002\u0001\u0002\u0005\u0002"+
+		"A\b\u0002\n\u0002\f\u0002D\t\u0002\u0001\u0003\u0001\u0003\u0001\u0003"+
+		"\u0005\u0003I\b\u0003\n\u0003\f\u0003L\t\u0003\u0001\u0003\u0001\u0003"+
+		"\u0001\u0003\u0001\u0003\u0001\u0003\u0001\u0003\u0001\u0003\u0003\u0003"+
+		"U\b\u0003\u0001\u0003\u0003\u0003X\b\u0003\u0001\u0003\u0001\u0003\u0001"+
+		"\u0003\u0003\u0003]\b\u0003\u0001\u0004\u0003\u0004`\b\u0004\u0001\u0004"+
+		"\u0001\u0004\u0001\u0004\u0003\u0004e\b\u0004\u0001\u0004\u0003\u0004"+
+		"h\b\u0004\u0005\u0004j\b\u0004\n\u0004\f\u0004m\t\u0004\u0001\u0005\u0001"+
+		"\u0005\u0001\u0005\u0001\u0005\u0001\u0005\u0001\u0005\u0001\u0005\u0001"+
+		"\u0005\u0001\u0005\u0003\u0005x\b\u0005\u0003\u0005z\b\u0005\u0001\u0006"+
+		"\u0001\u0006\u0001\u0006\u0001\u0006\u0001\u0007\u0001\u0007\u0001\u0007"+
+		"\u0003\u0007\u0083\b\u0007\u0001\b\u0001\b\u0003\b\u0087\b\b\u0001\t\u0001"+
+		"\t\u0001\n\u0001\n\u0001\n\u0001\u000b\u0001\u000b\u0001\u000b\u0001\u000b"+
+		"\u0000\u0000\f\u0000\u0002\u0004\u0006\b\n\f\u000e\u0010\u0012\u0014\u0016"+
+		"\u0000\u0004\u0001\u0000\u0006\u0007\u0001\u0000\u0001\u0002\u0001\u0000"+
+		"\u0016\u0017\u0001\u0000\u0018\u0019\u009c\u0000\u001b\u0001\u0000\u0000"+
+		"\u0000\u00026\u0001\u0000\u0000\u0000\u0004;\u0001\u0000\u0000\u0000\u0006"+
+		"\\\u0001\u0000\u0000\u0000\b_\u0001\u0000\u0000\u0000\ny\u0001\u0000\u0000"+
+		"\u0000\f{\u0001\u0000\u0000\u0000\u000e\u0082\u0001\u0000\u0000\u0000"+
+		"\u0010\u0086\u0001\u0000\u0000\u0000\u0012\u0088\u0001\u0000\u0000\u0000"+
+		"\u0014\u008a\u0001\u0000\u0000\u0000\u0016\u008d\u0001\u0000\u0000\u0000"+
+		"\u0018\u001a\u0003\u0002\u0001\u0000\u0019\u0018\u0001\u0000\u0000\u0000"+
+		"\u001a\u001d\u0001\u0000\u0000\u0000\u001b\u0019\u0001\u0000\u0000\u0000"+
+		"\u001b\u001c\u0001\u0000\u0000\u0000\u001c\u001f\u0001\u0000\u0000\u0000"+
+		"\u001d\u001b\u0001\u0000\u0000\u0000\u001e \u0005\u0003\u0000\u0000\u001f"+
+		"\u001e\u0001\u0000\u0000\u0000\u001f \u0001\u0000\u0000\u0000 $\u0001"+
+		"\u0000\u0000\u0000!#\u0003\u0002\u0001\u0000\"!\u0001\u0000\u0000\u0000"+
+		"#&\u0001\u0000\u0000\u0000$\"\u0001\u0000\u0000\u0000$%\u0001\u0000\u0000"+
+		"\u0000%(\u0001\u0000\u0000\u0000&$\u0001\u0000\u0000\u0000\')\u0005\u0005"+
+		"\u0000\u0000(\'\u0001\u0000\u0000\u0000()\u0001\u0000\u0000\u0000)-\u0001"+
+		"\u0000\u0000\u0000*,\u0003\u0002\u0001\u0000+*\u0001\u0000\u0000\u0000"+
+		",/\u0001\u0000\u0000\u0000-+\u0001\u0000\u0000\u0000-.\u0001\u0000\u0000"+
+		"\u0000.3\u0001\u0000\u0000\u0000/-\u0001\u0000\u0000\u000002\u0003\u0004"+
+		"\u0002\u000010\u0001\u0000\u0000\u000025\u0001\u0000\u0000\u000031\u0001"+
+		"\u0000\u0000\u000034\u0001\u0000\u0000\u00004\u0001\u0001\u0000\u0000"+
+		"\u000053\u0001\u0000\u0000\u000067\u0007\u0000\u0000\u00007\u0003\u0001"+
+		"\u0000\u0000\u00008:\u0003\u0010\b\u000098\u0001\u0000\u0000\u0000:=\u0001"+
+		"\u0000\u0000\u0000;9\u0001\u0000\u0000\u0000;<\u0001\u0000\u0000\u0000"+
+		"<>\u0001\u0000\u0000\u0000=;\u0001\u0000\u0000\u0000>B\u0003\u0006\u0003"+
+		"\u0000?A\u0003\u0010\b\u0000@?\u0001\u0000\u0000\u0000AD\u0001\u0000\u0000"+
+		"\u0000B@\u0001\u0000\u0000\u0000BC\u0001\u0000\u0000\u0000C\u0005\u0001"+
+		"\u0000\u0000\u0000DB\u0001\u0000\u0000\u0000EF\u0005\n\u0000\u0000FJ\u0005"+
+		"\u0014\u0000\u0000GI\u0003\n\u0005\u0000HG\u0001\u0000\u0000\u0000IL\u0001"+
+		"\u0000\u0000\u0000JH\u0001\u0000\u0000\u0000JK\u0001\u0000\u0000\u0000"+
+		"KW\u0001\u0000\u0000\u0000LJ\u0001\u0000\u0000\u0000MT\u0005\u0010\u0000"+
+		"\u0000NO\u0003\b\u0004\u0000OP\u0005\n\u0000\u0000PQ\u0005\u0012\u0000"+
+		"\u0000QR\u0005\u0014\u0000\u0000RS\u0005\u0010\u0000\u0000SU\u0001\u0000"+
+		"\u0000\u0000TN\u0001\u0000\u0000\u0000TU\u0001\u0000\u0000\u0000UX\u0001"+
+		"\u0000\u0000\u0000VX\u0005\u0011\u0000\u0000WM\u0001\u0000\u0000\u0000"+
+		"WV\u0001\u0000\u0000\u0000X]\u0001\u0000\u0000\u0000Y]\u0005\u0006\u0000"+
+		"\u0000Z]\u0003\u0014\n\u0000[]\u0003\u0016\u000b\u0000\\E\u0001\u0000"+
+		"\u0000\u0000\\Y\u0001\u0000\u0000\u0000\\Z\u0001\u0000\u0000\u0000\\["+
+		"\u0001\u0000\u0000\u0000]\u0007\u0001\u0000\u0000\u0000^`\u0003\u000e"+
+		"\u0007\u0000_^\u0001\u0000\u0000\u0000_`\u0001\u0000\u0000\u0000`k\u0001"+
+		"\u0000\u0000\u0000ae\u0003\u0006\u0003\u0000be\u0005\u0004\u0000\u0000"+
+		"ce\u0003\u0012\t\u0000da\u0001\u0000\u0000\u0000db\u0001\u0000\u0000\u0000"+
+		"dc\u0001\u0000\u0000\u0000eg\u0001\u0000\u0000\u0000fh\u0003\u000e\u0007"+
+		"\u0000gf\u0001\u0000\u0000\u0000gh\u0001\u0000\u0000\u0000hj\u0001\u0000"+
+		"\u0000\u0000id\u0001\u0000\u0000\u0000jm\u0001\u0000\u0000\u0000ki\u0001"+
+		"\u0000\u0000\u0000kl\u0001\u0000\u0000\u0000l\t\u0001\u0000\u0000\u0000"+
+		"mk\u0001\u0000\u0000\u0000no\u0005\u001c\u0000\u0000op\u0005\f\u0000\u0000"+
+		"pq\u0005\r\u0000\u0000qr\u0003\f\u0006\u0000rs\u0005\r\u0000\u0000sz\u0001"+
+		"\u0000\u0000\u0000tw\u0005\u0014\u0000\u0000uv\u0005\u0013\u0000\u0000"+
+		"vx\u0005\u001a\u0000\u0000wu\u0001\u0000\u0000\u0000wx\u0001\u0000\u0000"+
+		"\u0000xz\u0001\u0000\u0000\u0000yn\u0001\u0000\u0000\u0000yt\u0001\u0000"+
+		"\u0000\u0000z\u000b\u0001\u0000\u0000\u0000{|\u0005\u000e\u0000\u0000"+
+		"|}\u0005\u000f\u0000\u0000}~\u0005\u000e\u0000\u0000~\r\u0001\u0000\u0000"+
+		"\u0000\u007f\u0083\u0005\u000b\u0000\u0000\u0080\u0083\u0005\u0007\u0000"+
+		"\u0000\u0081\u0083\u0001\u0000\u0000\u0000\u0082\u007f\u0001\u0000\u0000"+
+		"\u0000\u0082\u0080\u0001\u0000\u0000\u0000\u0082\u0081\u0001\u0000\u0000"+
+		"\u0000\u0083\u000f\u0001\u0000\u0000\u0000\u0084\u0087\u0003\u0012\t\u0000"+
+		"\u0085\u0087\u0005\u0007\u0000\u0000\u0086\u0084\u0001\u0000\u0000\u0000"+
+		"\u0086\u0085\u0001\u0000\u0000\u0000\u0087\u0011\u0001\u0000\u0000\u0000"+
+		"\u0088\u0089\u0007\u0001\u0000\u0000\u0089\u0013\u0001\u0000\u0000\u0000"+
+		"\u008a\u008b\u0005\b\u0000\u0000\u008b\u008c\u0007\u0002\u0000\u0000\u008c"+
+		"\u0015\u0001\u0000\u0000\u0000\u008d\u008e\u0005\t\u0000\u0000\u008e\u008f"+
+		"\u0007\u0003\u0000\u0000\u008f\u0017\u0001\u0000\u0000\u0000\u0014\u001b"+
+		"\u001f$(-3;BJTW\\_dgkwy\u0082\u0086";
+	public static final ATN _ATN =
+		new ATNDeserializer().deserialize(_serializedATN.toCharArray());
+	static {
+		_decisionToDFA = new DFA[_ATN.getNumberOfDecisions()];
+		for (int i = 0; i < _ATN.getNumberOfDecisions(); i++) {
+			_decisionToDFA[i] = new DFA(_ATN.getDecisionState(i), i);
+		}
+	}
+}
